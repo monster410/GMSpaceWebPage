@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//
+
 class HorizontalListView extends StatelessWidget {
   final List<String> imglist = [
     'images/01.jpg',
