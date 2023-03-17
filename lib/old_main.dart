@@ -238,7 +238,7 @@ class HomePageState extends State<HomePage> {
                       SizedBox(width: pic_width),
                       ClipRRect(
                           borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/v1.gif',
+                          child: Image.asset('images/SeoulLotteTower/sv1.gif',
                               width: 320, height: 180, fit: BoxFit.fill)),
                       SizedBox(width: pic_width),
                       ClipRRect(
@@ -278,7 +278,7 @@ class HomePageState extends State<HomePage> {
                       SizedBox(width: pic_width),
                       ClipRRect(
                           borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/v1.gif',
+                          child: Image.asset('images/SeoulHongDae/sv1.gif',
                               width: 320, height: 180, fit: BoxFit.fill)),
                       SizedBox(width: pic_width),
                       ClipRRect(
@@ -373,7 +373,7 @@ class HomePageState extends State<HomePage> {
                       SizedBox(width: pic_width),
                       ClipRRect(
                           borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/v1.gif',
+                          child: Image.asset('images/HausShanghai/sv1.gif',
                               width: 320, height: 180, fit: BoxFit.fill)),
                       SizedBox(width: pic_width),
                       ClipRRect(
@@ -530,7 +530,7 @@ class HomePageState extends State<HomePage> {
       ),
       body: LayoutBuilder(
         builder: (_, constraints) {
-          if (constraints.maxWidth >= 800) {
+          if (constraints.maxWidth >= 1200) {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -540,7 +540,7 @@ class HomePageState extends State<HomePage> {
                   child: settings,
                 ),
                 Flexible(
-                  flex: 2,
+                  flex: 3,
                   fit: FlexFit.tight,
                   child: chart,
                 )
