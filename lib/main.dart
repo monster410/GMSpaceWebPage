@@ -103,9 +103,10 @@ class HomePageState extends State<HomePage> {
 
   int key = 0;
 
-  double? pic_width = 15;
+  double? pic_width = 200;
   double? pic_height = 15;
   double? myfont_size = 15;
+  double? circle_size = 70;
 
   @override
   Widget build(BuildContext context) {
@@ -148,370 +149,341 @@ class HomePageState extends State<HomePage> {
     );
 
     final settings = SingleChildScrollView(
-      child: Card(
-        margin: const EdgeInsets.all(30),
-        child: Column(
-          children: [
-            ListTile(
-              title: Text(
-                '하우스 도산'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
+        child: Card(
+            margin: const EdgeInsets.all(30),
+            child: Center(
+              child: Column(
+                children: [
+                  SizedBox(height: 40),
+                  Center(
+                    child: ListTile(
+                      title: Center(
+                        child: Text(
+                          'gentle monster'.toUpperCase(),
+                          style: Theme.of(context).textTheme.overline!.copyWith(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
+                      ),
                     ),
+                  ),
+                  SizedBox(height: 40),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(flex: 50, child:TextButton(
+                    onPressed: () {},
+                      child: Center(
+                              child: Text(
+                                  'store'.toUpperCase(),
+                                  style: TextStyle(
+                                      color:
+                                      Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.bold))))),
+                          Flexible(flex: 24,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'best'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(flex: 24,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'better'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(flex: 24,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'archive'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  ))))
+                        ]),
+                  ),
+                  SizedBox(height: 25),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(flex:1,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'dfs'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(flex:1,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(flex:1,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(flex:1,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 10),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'mall'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'fs'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                      'm.fs'.toUpperCase(),
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255),
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                        'haus'.toUpperCase(),
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255),
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Center(
+                                      child: Text(
+                                    'pop-up'.toUpperCase(),
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  )))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/blue_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill)))
+                        ]),
+                  ),
+                  SizedBox(height: 30)
+                ],
               ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/main.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/2.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/3.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/4.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/5.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/6.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/7.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/8.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/9.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausDosan/10.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-            ListTile(
-              title: Text(
-                '롯데타워'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/main.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/sv1.gif',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/2.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/3.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulLotteTower/4.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-            ListTile(
-              title: Text(
-                '홍대'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/main.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/sv1.gif',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/2.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/3.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/4.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/5.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulHongDae/6.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-            ListTile(
-              title: Text(
-                '신사'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/main.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/2.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/3.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/4.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/5.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/SeoulSinsa/6.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-            ListTile(
-              title: Text(
-                '하우스 상하이'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/main.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/sv1.gif',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/2.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/3.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/4.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/5.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/6.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/7.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/8.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/9.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/10.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/11.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/12.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('images/HausShanghai/13.jpg',
-                              width: 320, height: 180, fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-            ListTile(
-              title: Text(
-                '베이징 산리툰 타이쿠리'.toUpperCase(),
-                style: Theme.of(context).textTheme.overline!.copyWith(
-                      fontSize: myfont_size,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Card(
-                    margin: const EdgeInsets.all(10),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/main.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/2.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/3.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/4.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/5.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/6.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                      SizedBox(width: pic_width),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(
-                              'images/BeijingSanlitunTaikooLi/7.jpg',
-                              width: 320,
-                              height: 180,
-                              fit: BoxFit.fill)),
-                    ]))),
-            SizedBox(height: pic_height),
-          ],
-        ),
-      ),
-    );
+            )));
     return Scaffold(
       appBar: AppBar(
         title: const Text("GENTLE MONSTER SPACE TEST PAGE"),
