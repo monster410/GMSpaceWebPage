@@ -171,9 +171,9 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 40),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Flexible(flex: 50, child:TextButton(
+                          Flexible(flex: 22, child:TextButton(
                     onPressed: () {},
                       child: Center(
                               child: Text(
@@ -183,7 +183,7 @@ class HomePageState extends State<HomePage> {
                                       Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 35,
                                       fontWeight: FontWeight.bold))))),
-                          Flexible(flex: 24,
+                          Flexible(flex: 12,
                               child: TextButton(
                                   onPressed: () {},
                                   child: Center(
@@ -195,7 +195,7 @@ class HomePageState extends State<HomePage> {
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
                                   )))),
-                          Flexible(flex: 24,
+                          Flexible(flex: 12,
                               child: TextButton(
                                   onPressed: () {},
                                   child: Center(
@@ -207,7 +207,7 @@ class HomePageState extends State<HomePage> {
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
                                   )))),
-                          Flexible(flex: 24,
+                          Flexible(flex: 12,
                               child: TextButton(
                                   onPressed: () {},
                                   child: Center(
@@ -224,7 +224,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 25),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(flex:1,
                               child: TextButton(
@@ -267,7 +267,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 10),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
                               child: TextButton(
@@ -310,7 +310,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
                               child: TextButton(
@@ -353,7 +353,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
                               child: TextButton(
@@ -397,7 +397,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
                               child: TextButton(
@@ -440,7 +440,7 @@ class HomePageState extends State<HomePage> {
                   SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
                               child: TextButton(
