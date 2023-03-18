@@ -1,4 +1,4 @@
-import 'dart:math' as math; // 변경
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
