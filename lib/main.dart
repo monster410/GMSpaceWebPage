@@ -1,7 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:gm_space_1/ScreenA3.dart';
+import 'package:gm_space_1/ScreenA4.dart';
+import 'package:gm_space_1/ScreenA5.dart';
+import 'package:gm_space_1/ScreenA6.dart';
+import 'package:gm_space_1/ScreenA7.dart';
 import 'package:pie_chart/pie_chart.dart';
+
+import 'ScreenA2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +30,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         brightness: Brightness.dark,
       ),
-      home: const HomePage(),
+      initialRoute: '/',// home: const HomePage(),
+      routes: {
+        '/' : (context) => const HomePage(),
+        '/A2' : (context) => ScreenA2(),
+        '/A3' : (context) => ScreenA3(),
+        '/A4' : (context) => ScreenA4(),
+        '/A5' : (context) => ScreenA5(),
+        '/A6' : (context) => ScreenA6(),
+        '/A7' : (context) => ScreenA7(),
+      },
     );
   }
 }
@@ -221,14 +237,16 @@ class HomePageState extends State<HomePage> {
                                   ))))
                         ]),
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A2');
+                                  },
                                   child: Center(
                                       child: Text(
                                     'dfs'.toUpperCase(),
@@ -271,7 +289,9 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Flexible(
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A3');
+                                  },
                                   child: Center(
                                       child: Text(
                                     'mall'.toUpperCase(),
@@ -314,7 +334,9 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Flexible(
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A4');
+                                  },
                                   child: Center(
                                       child: Text(
                                     'fs'.toUpperCase(),
@@ -357,7 +379,9 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Flexible(
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A5');
+                                  },
                                   child: Center(
                                       child: Text(
                                       'm.fs'.toUpperCase(),
@@ -401,7 +425,9 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Flexible(
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A6');
+                                  },
                                   child: Center(
                                       child: Text(
                                         'haus'.toUpperCase(),
@@ -444,7 +470,9 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Flexible(
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A7');
+                                  },
                                   child: Center(
                                       child: Text(
                                     'pop-up'.toUpperCase(),

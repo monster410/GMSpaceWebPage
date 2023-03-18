@@ -63,7 +63,7 @@ flutter:
   assets:
 #    - images/
 #    - images/BeijingSKPS/
-#    - images/BeijingSanlitunTaikooLi/
+    - images/BeijingSanlitunTaikooLi/
 #    - images/BeijingSKPS/
 #    - images/Changsha/
 #    - images/ChengduSKP/
@@ -73,7 +73,7 @@ flutter:
 #    - images/DubaiTheDubaiMall/
 #    - images/Guangzhou/
 #    - images/Hangzhou/
-#    - images/HausDosan/
+    - images/HausDosan/
 #    - images/HausShanghai/
 #    - images/HongKong/
 #    - images/HongKongK11Musea/
@@ -88,15 +88,15 @@ flutter:
 #    - images/Qingdao/
 #    - images/SanJose/
 #    - images/SeoulHongDae/
-#    - images/SeoulLotteTower/
-#    - images/SeoulSinsa/
+    - images/SeoulLotteTower/
+    - images/SeoulSinsa/
 #    - images/ShanghaiIfc/
 #    - images/ShanghaiTaikooli/
 #    - images/Shenyang/
 #    - images/Shenzhen/
 #    - images/SingaporeIon/
 #    - images/SingaporeMBS/
-#    - images/StarfieldHanam/
+    - images/StarfieldHanam/
 #    - images/TaipeiBreezeNanshan/
 #    - images/WuhanK11/
 #    - images/XianSKP/
