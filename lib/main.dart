@@ -154,7 +154,7 @@ class HomePageState extends State<HomePage> {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Center(
                     child: ListTile(
                       title: Center(
@@ -168,7 +168,7 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -178,7 +178,7 @@ class HomePageState extends State<HomePage> {
                       child: Center(
                               child: Text(
                                   'store'.toUpperCase(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color:
                                       Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 35,
@@ -189,10 +189,10 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'best'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                        fontSize: 30.0,
                                         fontWeight: FontWeight.bold),
                                   )))),
                           Flexible(flex: 12,
@@ -201,7 +201,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'better'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -213,7 +213,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'archive'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -232,7 +232,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'dfs'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -264,7 +264,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -275,7 +275,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'mall'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -307,7 +307,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -318,7 +318,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'fs'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -350,7 +350,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -361,7 +361,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                       'm.fs'.toUpperCase(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 255, 255, 255),
                                           fontSize: 30,
@@ -394,7 +394,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -405,7 +405,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                         'haus'.toUpperCase(),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Color.fromARGB(
                                                 255, 255, 255, 255),
                                             fontSize: 30,
@@ -437,7 +437,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Center(
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -448,7 +448,7 @@ class HomePageState extends State<HomePage> {
                                   child: Center(
                                       child: Text(
                                     'pop-up'.toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 30,
@@ -480,7 +480,7 @@ class HomePageState extends State<HomePage> {
                                       fit: BoxFit.fill)))
                         ]),
                   ),
-                  SizedBox(height: 30)
+                 const SizedBox(height: 30)
                 ],
               ),
             )));
