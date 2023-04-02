@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//////
+
 enum LegendShape { circle, rectangle }
 
 class HomePage extends StatefulWidget {
@@ -113,7 +113,7 @@ class HomePageState extends State<HomePage> {
   double? pic_width = 200;
   double? pic_height = 15;
   double? myfont_size = 15;
-  double? circle_size = 70;
+  double? circle_size = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +171,7 @@ class HomePageState extends State<HomePage> {
                         child: Text(
                           'gentle monster space'.toUpperCase(),
                           style: Theme.of(context).textTheme.overline!.copyWith(
-                                fontSize: 30,
+                                fontSize: 25,
                                 fontWeight: FontWeight.bold
                               ),
                         ),
@@ -230,7 +230,7 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(300, 20)),
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A2');
                                   },
@@ -244,151 +244,145 @@ class HomePageState extends State<HomePage> {
                                         fontWeight: FontWeight.bold),
                                   )))),
 
-                          const Flexible(flex:1, child: SizedBox(width: 100)),
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
 
                           Flexible(flex:1,
                               child: TextButton(
                                   onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                  child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                                       )),
 
-                          const Flexible(flex:1, child: SizedBox(width: 120)),
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
 
                           Flexible(flex:1,
                               child: TextButton(
                                   onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A3');
                                   },
                                   child: Center(
                                       child: Text(
-                                    '~50'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
+                                        '~50'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color:
                                             Color.fromRGBO(0, 0, 0, 1),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
-                          Flexible(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
                   const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A4');
                                   },
                                   child: Center(
                                       child: Text(
-                                    '~100'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
+                                        '~100'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color:
                                             Color.fromRGBO(0, 0, 0, 1),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
-                          Flexible(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
                   const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A5');
                                   },
                                   child: Center(
                                       child: Text(
-                                      '~200'.toUpperCase(),
-                                      style: const TextStyle(
-                                          color: Color.fromRGBO(0, 0, 0, 1),
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ))),
-                          Flexible(
+                                        '~200'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color:
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
                   const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A3');
                                   },
@@ -401,32 +395,32 @@ class HomePageState extends State<HomePage> {
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold),
                                       )))),
-                          Flexible(
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
                   const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A6');
                                   },
@@ -434,64 +428,66 @@ class HomePageState extends State<HomePage> {
                                       child: Text(
                                         'haus'.toUpperCase(),
                                         style: const TextStyle(
-                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                            color:
+                                            Color.fromRGBO(0, 0, 0, 1),
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold),
                                       )))),
-                          Flexible(
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
                   const SizedBox(height: 20),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          // const Flexible(flex:1, child: SizedBox(width: 10)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(120, 20)),
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/A7');
+                                    Navigator.pushNamed(context, '/A7;');
                                   },
                                   child: Center(
                                       child: Text(
-                                    'pop-up'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
+                                        'pop-up'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color:
                                             Color.fromRGBO(0, 0, 0, 1),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
-                          Flexible(//
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 140)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
+                              )),
 
                         ]),
                   ),
@@ -499,12 +495,12 @@ class HomePageState extends State<HomePage> {
 
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                          Flexible(flex:1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(120, 20)),
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/A3');
+                                    Navigator.pushNamed(context, '/A7;');
                                   },
                                   child: Center(
                                       child: Text(
@@ -515,22 +511,22 @@ class HomePageState extends State<HomePage> {
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold),
                                       )))),
-                          Flexible(
+
+                          const Flexible(flex:1, child: SizedBox(width: 140)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/red_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
-                          Flexible(
+                                onPressed: () {},
+                                child: Icon(Icons.square_rounded,color:Colors.black,size:circle_size),
+                              )),
+
+                          const Flexible(flex:1, child: SizedBox(width: 160)),
+
+                          Flexible(flex:1,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/yellow_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill))),
+                                onPressed: () {},
+                                child: Icon(Icons.circle_outlined,color:Colors.white,size:circle_size),
+                              )),
 
                         ]),
                   ),
