@@ -7,7 +7,8 @@ class ScreenA3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MALL'),
+          backgroundColor: Colors.white,
+          title: Image.asset('images/oomot.png',height: 50,)
       ),
       body: SingleChildScrollView(scrollDirection: Axis.vertical,
             child: Card(
@@ -27,22 +28,22 @@ class ScreenA3 extends StatelessWidget {
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/SeoulLotteTower/main.jpg',
-      width: 1200, height: 675, fit: BoxFit.fill)),
+      width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/SeoulLotteTower/2.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/SeoulLotteTower/3.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/SeoulLotteTower/4.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
 
       ]),

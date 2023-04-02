@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       title: 'GENTLE MONSTER SPACE',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.yellow
       ),
       darkTheme: ThemeData(
         primarySwatch: Colors.blueGrey,
@@ -55,34 +55,25 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   final dataMap = <String, double>{
-    "Wooah": 15,
-    "Hahaha": 20,
-    "ㅋㅋㅋㅋㅋ": 20,
-    "멋있다": 12,
-    "OMG": 10,
-    "zzz": 15,
-    "WoW": 30,
+    "HIGH-END": 60,
+    "ARTISTIC": 23,
+    "SURPRISE": 10,
+    "WIT": 7,
   };
 
   final legendLabels = <String, String>{
-    "Wooah": "우와",
-    "Hahaha": "하하하",
-    "ㅋㅋㅋㅋㅋ": "ㅋㅋㅋ",
-    "멋있다": "멋있다!",
-    "OMG": "Oh My God",
-    "zzz": "zzz",
-    "WoW": "Wow",
+    "HIGH-END": "멋있다!",
+    "ARTISTIC": "ㅋㅋㅋ",
+    "SURPRISE": "하하하",
+    "WIT": "우와",
   };
 
   final colorList = <Color>[
-    const Color(0xfffdcb6e),
-    const Color(0xff0984e3),
-    const Color(0xfffd79a8),
-    const Color(0xffe17055),
-    const Color(0xff6c5ce7),
-    const Color.fromARGB(255, 96, 224, 139),
-    const Color.fromARGB(255, 198, 40, 188),
-  ];
+    const Color.fromRGBO(79,128,188,1),
+    const Color.fromRGBO(191,80,77,1),
+    const Color.fromRGBO(155,186,88,1),
+    const Color.fromRGBO(127,99,161,1),
+    ];
 
   final gradientList = <List<Color>>[
     [
@@ -98,7 +89,7 @@ class HomePageState extends State<HomePage> {
       const Color.fromRGBO(254, 154, 92, 1),
     ]
   ];
-  ChartType? _chartType = ChartType.disc;
+  ChartType? _chartType = ChartType.ring;
   bool _showCenterText = true;
   double? _ringStrokeWidth = 32;
   double? _chartLegendSpacing = 48;
@@ -135,7 +126,9 @@ class HomePageState extends State<HomePage> {
       colorList: colorList,
       initialAngleInDegree: 0,
       chartType: _chartType!,
-      centerText: _showCenterText ? "EMOTION" : null,
+      centerText: _showCenterText ? "EMOTIONAL RATIO" : null,
+      centerTextStyle: const TextStyle(fontWeight: FontWeight.bold,
+          color: Color.fromRGBO(0, 0, 0, 1)),
       legendLabels: _showLegendLabel ? legendLabels : {},
       legendOptions: LegendOptions(
         showLegendsInRow: _showLegendsInRow,
@@ -146,6 +139,7 @@ class HomePageState extends State<HomePage> {
             : BoxShape.rectangle,
         legendTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
+          color: Color.fromRGBO(0,0, 0,1)
         ),
       ),
       chartValuesOptions: ChartValuesOptions(
@@ -175,10 +169,10 @@ class HomePageState extends State<HomePage> {
                     child: ListTile(
                       title: Center(
                         child: Text(
-                          'gentle monster'.toUpperCase(),
+                          'gentle monster space'.toUpperCase(),
                           style: Theme.of(context).textTheme.overline!.copyWith(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold
                               ),
                         ),
                       ),
@@ -187,75 +181,71 @@ class HomePageState extends State<HomePage> {
                   const SizedBox(height: 40),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Flexible(flex: 22, child:TextButton(
+                          Flexible(flex: 1,
+                              child:TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10),backgroundColor:Colors.black),
                     onPressed: () {},
                       child: Center(
                               child: Text(
-                                  'store'.toUpperCase(),
+                                  'size(py)'.toUpperCase(),
                                   style: const TextStyle(
-                                      color:
-                                      Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 35,
+                                      color:Colors.white,
+                                      fontSize: 15,
                                       fontWeight: FontWeight.bold))))),
-                          Flexible(flex: 12,
-                              child: TextButton(
+                          const Flexible(flex:1, child: SizedBox(width: 30)),
+
+                          Flexible(flex: 1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10), backgroundColor:Colors.black),
                                   onPressed: () {},
                                   child: Center(
                                       child: Text(
                                     'best'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30.0,
+                                            Colors.white,
+                                        fontSize: 15.0,
                                         fontWeight: FontWeight.bold),
                                   )))),
-                          Flexible(flex: 12,
-                              child: TextButton(
+
+                          const Flexible(flex:1, child: SizedBox(width: 30)),
+//
+                          Flexible(flex: 1,
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10), backgroundColor:Colors.black),
                                   onPressed: () {},
                                   child: Center(
                                       child: Text(
                                     'better'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                            Colors.white,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   )))),
-                          Flexible(flex: 12,
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                      child: Text(
-                                    'archive'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ))))
                         ]),
                   ),
                   const SizedBox(height: 25),
                   Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(flex:1,
-                              child: TextButton(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(300, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A2');
                                   },
                                   child: Center(
                                       child: Text(
-                                    'dfs'.toUpperCase(),
+                                    '~20'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   )))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 100)),
+
                           Flexible(flex:1,
                               child: TextButton(
                                   onPressed: () {},
@@ -264,6 +254,9 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
+
+                          const Flexible(flex:1, child: SizedBox(width: 120)),
+
                           Flexible(flex:1,
                               child: TextButton(
                                   onPressed: () {},
@@ -272,14 +265,7 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
-                          Flexible(flex:1,
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/blue_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill)))
+
                         ]),
                   ),
                   const SizedBox(height: 10),
@@ -288,17 +274,17 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
-                              child: TextButton(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A3');
                                   },
                                   child: Center(
                                       child: Text(
-                                    'mall'.toUpperCase(),
+                                    '~50'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   )))),
                           Flexible(
@@ -317,14 +303,7 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
-                          Flexible(
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/blue_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill)))
+
                         ]),
                   ),
                   const SizedBox(height: 20),
@@ -333,17 +312,17 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
-                              child: TextButton(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A4');
                                   },
                                   child: Center(
                                       child: Text(
-                                    'fs'.toUpperCase(),
+                                    '~100'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   )))),
                           Flexible(
@@ -362,14 +341,7 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
-                          Flexible(
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/blue_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill)))
+
                         ]),
                   ),
                   const SizedBox(height: 20),
@@ -378,17 +350,16 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
-                              child: TextButton(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A5');
                                   },
                                   child: Center(
                                       child: Text(
-                                      'm.fs'.toUpperCase(),
+                                      '~200'.toUpperCase(),
                                       style: const TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255),
-                                          fontSize: 30,
+                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                          fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ))),
@@ -408,14 +379,7 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
-                          Flexible(
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/blue_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill)))
+
                         ]),
                   ),
                   const SizedBox(height: 20),
@@ -424,17 +388,17 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
-                              child: TextButton(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/A6');
+                                    Navigator.pushNamed(context, '/A3');
                                   },
                                   child: Center(
                                       child: Text(
-                                        'haus'.toUpperCase(),
+                                        '200~'.toUpperCase(),
                                         style: const TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            fontSize: 30,
+                                            color:
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                            fontSize: 20,
                                             fontWeight: FontWeight.bold),
                                       )))),
                           Flexible(
@@ -453,14 +417,7 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
-                          Flexible(
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Image.asset(
-                                      'images/icon/blue_circle.png',
-                                      width: circle_size,
-                                      height: circle_size,
-                                      fit: BoxFit.fill)))
+
                         ]),
                   ),
                   const SizedBox(height: 20),
@@ -469,7 +426,44 @@ class HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Flexible(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A6');
+                                  },
+                                  child: Center(
+                                      child: Text(
+                                        'haus'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
+                          Flexible(
                               child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/red_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+
+                        ]),
+                  ),
+                  const SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Flexible(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/A7');
                                   },
@@ -478,8 +472,8 @@ class HomePageState extends State<HomePage> {
                                     'pop-up'.toUpperCase(),
                                     style: const TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 30,
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   )))),
                           Flexible(//
@@ -498,25 +492,59 @@ class HomePageState extends State<HomePage> {
                                       width: circle_size,
                                       height: circle_size,
                                       fit: BoxFit.fill))),
+
+                        ]),
+                  ),
+                 const SizedBox(height: 20),
+
+                  Center(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Flexible(
+                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20)),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/A3');
+                                  },
+                                  child: Center(
+                                      child: Text(
+                                        'archive'.toUpperCase(),
+                                        style: const TextStyle(
+                                            color:
+                                            Color.fromRGBO(0, 0, 0, 1),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      )))),
                           Flexible(
                               child: TextButton(
                                   onPressed: () {},
                                   child: Image.asset(
-                                      'images/icon/blue_circle.png',
+                                      'images/icon/red_circle.png',
                                       width: circle_size,
                                       height: circle_size,
-                                      fit: BoxFit.fill)))
+                                      fit: BoxFit.fill))),
+                          Flexible(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Image.asset(
+                                      'images/icon/yellow_circle.png',
+                                      width: circle_size,
+                                      height: circle_size,
+                                      fit: BoxFit.fill))),
+
                         ]),
                   ),
-                 const SizedBox(height: 30)
+                  const SizedBox(height: 30)
                 ],
               ),
             )));
     return Scaffold(
       appBar: AppBar(
-        title: const Text("GENTLE MONSTER SPACE TEST PAGE"),
-        titleTextStyle: const TextStyle(
-            fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+        backgroundColor: Colors.white,
+        title: Image.asset('images/oomot.png',height: 50,alignment: Alignment.centerLeft),
+        // title: const Text("GENTLE MONSTER SPACE TEST PAGE"),
+        // titleTextStyle: const TextStyle(
+        //     fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
         actions: [
           ElevatedButton(
             onPressed: () {

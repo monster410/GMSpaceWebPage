@@ -7,7 +7,8 @@ class ScreenA7 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('POP-UP'),
+          backgroundColor: Colors.white,
+          title: Image.asset('images/oomot.png',height: 50,)
       ),
       body: SingleChildScrollView(scrollDirection: Axis.vertical,
             child: Card(
@@ -27,52 +28,52 @@ class ScreenA7 extends StatelessWidget {
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/main.jpg',
-      width: 1200, height: 675, fit: BoxFit.fill)),
+      width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/2.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/3.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/4.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/5.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/6.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/7.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/8.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/9.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/HausDosan/10.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       ]),
     )
     ))

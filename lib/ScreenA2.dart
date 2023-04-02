@@ -7,7 +7,8 @@ class ScreenA2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DFS'),
+        backgroundColor: Colors.white,
+        title: Image.asset('images/oomot.png',height: 50,)
       ),
       body: SingleChildScrollView(scrollDirection: Axis.vertical,
             child: Card(
@@ -27,37 +28,37 @@ class ScreenA2 extends StatelessWidget {
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/main.jpg',
-      width: 1200, height: 675, fit: BoxFit.fill)),
+      width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/2.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/3.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/4.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/5.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/6.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height),
       ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Image.asset('images/BeijingSanlitunTaikooLi/7.jpg',
-          width: 1200, height: 675, fit: BoxFit.fill)),
+          width: 1200, height: 675, fit: BoxFit.fitWidth)),
       SizedBox(height: pic_height)
 
       ]),
