@@ -23,22 +23,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       title: 'GENTLE MONSTER SPACE',
-      theme: ThemeData(
-        primarySwatch: Colors.yellow
-      ),
+      theme: ThemeData(primarySwatch: Colors.grey),
       darkTheme: ThemeData(
         primarySwatch: Colors.blueGrey,
         brightness: Brightness.dark,
       ),
-      initialRoute: '/',// home: const HomePage(),
+      initialRoute: '/',
+      // home: const HomePage(),
       routes: {
-        '/' : (context) => const HomePage(),
-        '/A2' : (context) => ScreenA2(),
-        '/A3' : (context) => ScreenA3(),
-        '/A4' : (context) => ScreenA4(),
-        '/A5' : (context) => ScreenA5(),
-        '/A6' : (context) => ScreenA6(),
-        '/A7' : (context) => ScreenA7(),
+        '/': (context) => const HomePage(),
+        '/A2': (context) => ScreenA2(),
+        '/A3': (context) => ScreenA3(),
+        '/A4': (context) => ScreenA4(),
+        '/A5': (context) => ScreenA5(),
+        '/A6': (context) => ScreenA6(),
+        '/A7': (context) => ScreenA7(),
       },
     );
   }
@@ -69,11 +68,11 @@ class HomePageState extends State<HomePage> {
   };
 
   final colorList = <Color>[
-    const Color.fromRGBO(79,128,188,1),
-    const Color.fromRGBO(191,80,77,1),
-    const Color.fromRGBO(155,186,88,1),
-    const Color.fromRGBO(127,99,161,1),
-    ];
+    const Color.fromRGBO(79, 128, 188, 1),
+    const Color.fromRGBO(191, 80, 77, 1),
+    const Color.fromRGBO(155, 186, 88, 1),
+    const Color.fromRGBO(127, 99, 161, 1),
+  ];
 
   final gradientList = <List<Color>>[
     [
@@ -117,427 +116,499 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final chart = PieChart(
-      key: ValueKey(key),
-      dataMap: dataMap,
-      animationDuration: const Duration(milliseconds: 800),
-      chartLegendSpacing: _chartLegendSpacing!,
-      chartRadius: math.min(MediaQuery.of(context).size.width / 3.2, 300),
-      colorList: colorList,
-      initialAngleInDegree: 0,
-      chartType: _chartType!,
-      centerText: _showCenterText ? "EMOTIONAL RATIO" : null,
-      centerTextStyle: const TextStyle(fontWeight: FontWeight.bold,
-          color: Color.fromRGBO(0, 0, 0, 1)),
-      legendLabels: _showLegendLabel ? legendLabels : {},
-      legendOptions: LegendOptions(
-        showLegendsInRow: _showLegendsInRow,
-        legendPosition: _legendPosition!,
-        showLegends: _showLegends,
-        legendShape: _legendShape == LegendShape.circle
-            ? BoxShape.circle
-            : BoxShape.rectangle,
-        legendTextStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Color.fromRGBO(0,0, 0,1)
-        ),
+    final chart = Center(
+      child: Column(
+        children: [
+          const Flexible(flex: 1, child: SizedBox(height: 60)),
+          Flexible(
+              flex: 1,
+              child: Row(
+                children: [
+                  const SizedBox(width: 50),
+                  Center(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            fixedSize: const Size(200, 20),
+                            padding: const EdgeInsets.all(10),
+                            backgroundColor: Colors.black),
+                        onPressed: () {},
+                        child: Text('EMOTIONAL RATIO'.toUpperCase(),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold))),
+                  ),
+                ],
+              )),
+          const Flexible(flex: 1, child: SizedBox(height: 100)),
+          Flexible(
+              flex: 2,
+              child: Center(
+                child: Row(
+                  children: [
+                    PieChart(
+                      key: ValueKey(key),
+                      dataMap: dataMap,
+                      animationDuration: const Duration(milliseconds: 800),
+                      chartLegendSpacing: _chartLegendSpacing!,
+                      chartRadius: math.min(
+                          MediaQuery.of(context).size.width / 3.2, 300),
+                      colorList: colorList,
+                      initialAngleInDegree: 0,
+                      chartType: _chartType!,
+                      centerText: _showCenterText ? "" : null,
+                      //EMOTIONAL RATIO
+                      centerTextStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 0, 0, 1)),
+                      legendLabels: _showLegendLabel ? legendLabels : {},
+                      legendOptions: LegendOptions(
+                        showLegendsInRow: _showLegendsInRow,
+                        legendPosition: _legendPosition!,
+                        showLegends: _showLegends,
+                        legendShape: _legendShape == LegendShape.circle
+                            ? BoxShape.circle
+                            : BoxShape.rectangle,
+                        legendTextStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromRGBO(0, 0, 0, 1)),
+                      ),
+                      chartValuesOptions: ChartValuesOptions(
+                        showChartValueBackground: _showChartValueBackground,
+                        showChartValues: _showChartValues,
+                        showChartValuesInPercentage:
+                            _showChartValuesInPercentage,
+                        showChartValuesOutside: _showChartValuesOutside,
+                      ),
+                      ringStrokeWidth: _ringStrokeWidth!,
+                      emptyColor: Colors.grey,
+                      gradientList: _showGradientColors ? gradientList : null,
+                      emptyColorGradient: const [
+                        Color(0xff6c5ce7),
+                        Colors.blue,
+                      ],
+                      baseChartColor: Colors.transparent,
+                    ),
+                  ],
+                ),
+              )),
+          const Flexible(flex: 1, child: SizedBox(height: 200))
+        ],
       ),
-      chartValuesOptions: ChartValuesOptions(
-        showChartValueBackground: _showChartValueBackground,
-        showChartValues: _showChartValues,
-        showChartValuesInPercentage: _showChartValuesInPercentage,
-        showChartValuesOutside: _showChartValuesOutside,
-      ),
-      ringStrokeWidth: _ringStrokeWidth!,
-      emptyColor: Colors.grey,
-      gradientList: _showGradientColors ? gradientList : null,
-      emptyColorGradient: const [
-        Color(0xff6c5ce7),
-        Colors.blue,
-      ],
-      baseChartColor: Colors.transparent,
     );
 
-    final settings = SingleChildScrollView(
-        child: Card(
-            margin: const EdgeInsets.all(30),
-            child: Center(
-              child: Column(
-                children: [
-                  const SizedBox(height: 40),
-                  Center(
-                    child: ListTile(
-                      title: Center(
-                        child: Text(
-                          'gentle monster space'.toUpperCase(),
-                          style: Theme.of(context).textTheme.overline!.copyWith(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold
-                              ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex: 1,
-                              child:TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10),backgroundColor:Colors.black),
-                    onPressed: () {},
+    final settings = Center(
+      child: Column(
+        children: [
+          const SizedBox(height: 120),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style: TextButton.styleFrom(
+                          fixedSize: const Size(200, 20),
+                          padding: const EdgeInsets.all(10),
+                          backgroundColor: Colors.black),
+                      onPressed: () {},
                       child: Center(
-                              child: Text(
-                                  'size(py)'.toUpperCase(),
-                                  style: const TextStyle(
-                                      color:Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold))))),
-                          const Flexible(flex:1, child: SizedBox(width: 30)),
+                          child: Text('size(py)'.toUpperCase(),
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold))))),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
 
-                          Flexible(flex: 1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10), backgroundColor:Colors.black),
-                                  onPressed: () {},
-                                  child: Center(
-                                      child: Text(
-                                    'best'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
-                                            Colors.white,
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style: TextButton.styleFrom(
+                          fixedSize: const Size(200, 20),
+                          padding: const EdgeInsets.all(10),
+                          backgroundColor: Colors.black),
+                      onPressed: () {},
+                      child: Center(
+                          child: Text(
+                        'best'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          const Flexible(flex:1, child: SizedBox(width: 30)),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
 //
-                          Flexible(flex: 1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(200, 20),padding: const EdgeInsets.all(10), backgroundColor:Colors.black),
-                                  onPressed: () {},
-                                  child: Center(
-                                      child: Text(
-                                    'better'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
-                                            Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
-                        ]),
-                  ),
-                  const SizedBox(height: 25),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A2');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                    '~20'.toUpperCase(),
-                                    style: const TextStyle(
-                                        color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )))),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style: TextButton.styleFrom(
+                          fixedSize: const Size(200, 20),
+                          padding: const EdgeInsets.all(10),
+                          backgroundColor: Colors.black),
+                      onPressed: () {},
+                      child: Center(
+                          child: Text(
+                        'better'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      )))),
+            ]),
+          ),
+          const SizedBox(height: 20),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A2');
+                      },
+                      child: Center(
+                          child: Text(
+                        '~20'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                                       )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                  onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A3');
+                      },
+                      child: Center(
+                          child: Text(
+                        '~50'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A3');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        '~50'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A4');
+                      },
+                      child: Center(
+                          child: Text(
+                        '~100'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A4');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        '~100'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A5');
+                      },
+                      child: Center(
+                          child: Text(
+                        '~200'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A5');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        '~200'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A3');
+                      },
+                      child: Center(
+                          child: Text(
+                        '200~'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A3');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        '200~'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A6');
+                      },
+                      child: Center(
+                          child: Text(
+                        'haus'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A7');
+                      },
+                      child: Center(
+                          child: Text(
+                        'pop-up'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(80, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A6');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        'haus'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.grey, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15),
+          Center(
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              // const Flexible(flex:1, child: SizedBox(width: 10)),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                      style:
+                          TextButton.styleFrom(fixedSize: const Size(120, 20)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/A7;');
+                      },
+                      child: Center(
+                          child: Text(
+                        'ARCHIVE'.toUpperCase(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      )))),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
+              const Flexible(flex: 1, child: SizedBox(width: 140)),
 
-                        ]),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // const Flexible(flex:1, child: SizedBox(width: 10)),
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(120, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A7;');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        'pop-up'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.square_rounded,
+                        color: Colors.black, size: circle_size),
+                  )),
 
-                          const Flexible(flex:1, child: SizedBox(width: 140)),
+              const Flexible(flex: 1, child: SizedBox(width: 160)),
 
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
-
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
-
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.grey,size:circle_size),
-                              )),
-
-                        ]),
-                  ),
-                 const SizedBox(height: 20),
-
-                  Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(flex:1,
-                              child: TextButton(style: TextButton.styleFrom(fixedSize: const Size(120, 20)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/A7;');
-                                  },
-                                  child: Center(
-                                      child: Text(
-                                        'archive'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color:
-                                            Color.fromRGBO(0, 0, 0, 1),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )))),
-
-                          const Flexible(flex:1, child: SizedBox(width: 140)),
-
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.square_rounded,color:Colors.black,size:circle_size),
-                              )),
-
-                          const Flexible(flex:1, child: SizedBox(width: 160)),
-
-                          Flexible(flex:1,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Icon(Icons.circle_outlined,color:Colors.white,size:circle_size),
-                              )),
-
-                        ]),
-                  ),
-                  const SizedBox(height: 30)
-                ],
-              ),
-            )));
+              Flexible(
+                  flex: 1,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Icon(Icons.circle_outlined,
+                        color: Colors.white, size: circle_size),
+                  )),
+              const Flexible(flex: 1, child: SizedBox(width: 30)),
+            ]),
+          ),
+          const SizedBox(height: 15)
+        ],
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Image.asset('images/oomot.png',height: 50,alignment: Alignment.centerLeft),
+        title: Image.asset('images/oomot.png',
+            height: 50, alignment: Alignment.centerLeft),
         // title: const Text("GENTLE MONSTER SPACE TEST PAGE"),
         // titleTextStyle: const TextStyle(
         //     fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
